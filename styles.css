@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("assets/fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/fonts/Gilroy-Regular.woff2") format("woff2"), url("assets/fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+}
+
+#viewer {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+}
+
+button {
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  display: inline-flex;
+  color: #25232E;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1rem;
+  height: 36px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-family: inherit;
+  letter-spacing: 0.1em;
+  border-radius: 20px;
+  transition: 300ms ease;
+}
+
+button.icon {
+  width: 36px;
+  height: 36px;
+  justify-content: center;
+  padding: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button[aria-current="true"] {
+  color: #EF7D00;
+}
+
+.tower-controls {
+  position: absolute;
+  left: clamp(0.75rem, 0.1338rem + 2.6291vw, 2.5rem);
+  top: 36px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.floor-controls {
+  position: absolute;
+  top: 50%;
+  left: clamp(0.75rem, 0.1338rem + 2.6291vw, 2.5rem);
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transform: translate(0, -50%);
+}
+
+.floor-controls button {
+  font-weight: 400;
+}
+
+.fullscreen-control {
+  position: absolute;
+  top: 36px;
+  right: clamp(0.75rem, 0.1338rem + 2.6291vw, 2.5rem);
+  z-index: 10;
+}
+
+.zoom-controls {
+  position: absolute;
+  right: clamp(0.75rem, 0.1338rem + 2.6291vw, 2.5rem);
+  top: 50%;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  transform: translate(0, -50%);
+}
+
+.zoom-controls button {
+  border: 1px solid hsl(0 0% 100%);
+  background-color: transparent;
+  color: white;
+}
+
+.caption {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: hsl(0 0% 100% / .8);
+  transform: translate(-50%, 0);
+}
+
+@media screen and (hover: hover) {
+  button:not(:disabled):hover {
+    background-color: hsl(0 0% 100% / .8);
+  }
+
+  .zoom-controls button:not(:disabled):hover {
+    background-color: hsl(0 0% 100%);
+    color: #25232E;
+  }
+}

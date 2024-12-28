@@ -1,0 +1,16 @@
+{
+  "name": "dom-panorama",
+  "version": "1.0.0",
+  "description": "",
+  "main": "converter.js",
+  "type": "module",
+  "scripts": {
+    "convert": "node converter.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

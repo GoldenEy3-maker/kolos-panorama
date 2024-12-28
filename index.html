@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панорама</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div
+      id="viewer"
+      data-json='[{"value": 16,"height": "55 метров"},{"value": 12,"height": "45 метров"},{"value": 10,"height": "35 метров"},{"value": 8,"height": "25 метров"},{"value": 4,"height": "15 метров"}]'>
+      <div class="floor-controls" id="floors-container"></div>
+      <div class="caption">
+        <span id="caption-floor">20 этаж</span>
+        <span>•</span>
+        <span id="caption-floor-height">45 метров</span>
+      </div>
+    </div>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+          "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.10.1/index.module.js",
+          "@photo-sphere-viewer/equirectangular-tiles-adapter": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/equirectangular-tiles-adapter@5.10.1/index.module.min.js",
+          "@photo-sphere-viewer/visible-range-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/visible-range-plugin@5.10.1/index.module.min.js"
+        }
+      }
+    </script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
